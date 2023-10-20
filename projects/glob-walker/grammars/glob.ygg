@@ -1,0 +1,33 @@
+grammar Glob {}
+
+entry union Value {
+    | Object  #Object
+    | Array   #Array
+    // | String  #String
+    | Number  #Number
+    | Boolean #Boolean
+    | Null    #Null
+}
+
+
+
+class RegexMode {
+    '(?' OP_DISABLE? /[a-zA-Z]*/ ')'
+}
+// === special === -----------------------------------------------------------------------------------------------------
+atomic class Escaped {
+    '\\' ANY
+}
+token {
+    OP_SPLIT: '/'
+    OP_HOME: '~'
+    OP_DISABLE: '-'
+    OP_NEGATIVE: '!'
+}
+// === ignores === -----------------------------------------------------------------------------------------------------
+ignore class WhiteSpace {
+    [\p{WhiteSpace}]
+}
+ignore class Comment {
+    /#[^\n\r]*/
+}
