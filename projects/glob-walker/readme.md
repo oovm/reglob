@@ -18,17 +18,27 @@ path/
 [yY][cC]{2}
 ```
 
-### Search Group
+### Search Group(Relative paths)
 
 ```glob
 ~/home
 
+./here
 ../relatively
 
-./here
+
+*.json
+**.json
+
+
 path/
-(?i)ygg.{json, json5, toml}
-(?i)Yggdrasil.{json, json5, toml}
+path/**
+**path/**
+this-path/a.text
+
+/path/
+**/path/**
+
 ```
 
 ### Search Coverage
