@@ -1,3 +1,3 @@
-# Json5Parser
+# Parser
 
 ![Railway](./railway.svg)
